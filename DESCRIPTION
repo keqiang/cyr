@@ -1,0 +1,11 @@
+Package: cyr
+Type: Package
+Title: A R wrapper for Cytoscape RESTful API
+Version: 0.1.0
+Author: Keqiang Li
+Maintainer: Keqiang Li <lkq@umich.edu>
+Description: An simple R wrapper for Cytoscape RESTful API
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Imports: httr, jsonlite
