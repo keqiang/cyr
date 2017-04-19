@@ -24,10 +24,12 @@ putRequesst <- function (url, body) {
   httr::PUT(url, body = body, encode = 'json')
 }
 
+#' @export
 cytoscape.networks.list <- function () {
   getRequest(paste(cytoscape_url, 'networks.names', sep = "/"))
 }
 
+#' @export
 cytoscape.networks.nodes.list <- function (network_id, only_summary = TRUE, summary_using_columns = c('name', 'SUID')) {
   all_nodes <- getRequest(paste(cytoscape_network_url, network_id, 'tables', table_type_node, 'rows', sep = "/"))
 
@@ -38,6 +40,7 @@ cytoscape.networks.nodes.list <- function (network_id, only_summary = TRUE, summ
   }
 }
 
+#' @export
 cytoscape.networks.nodes.selected.list <- function (network_id, only_summary = TRUE, summary_using_columns = c('name', 'SUID')) {
   all_nodes <- getRequest(paste(cytoscape_network_url, network_id, 'tables', table_type_node, 'rows', sep = "/"))
   if (only_summary && !is.null(summary_using_columns) && length(summary_using_columns) > 0) {
@@ -47,6 +50,7 @@ cytoscape.networks.nodes.selected.list <- function (network_id, only_summary = T
   }
 }
 
+#' @export
 cytoscape.networks.nodes.selected.set <- function (network_id, node_name_list) {
   selected <- rep(TRUE, length(node_name_list))
   name <- node_name_list
